@@ -49,6 +49,23 @@ cdef extern from "_bcm2835.h" nogil:
   int c_BCM2835_GPPUDCLK0     "BCM2835_GPPUDCLK0"
   int c_BCM2835_GPPUDCLK1     "BCM2835_GPPUDCLK1"
 
+  int c_BCM2835_PADS_GPIO_0_27 "BCM2835_PADS_GPIO_0_27"  # Pad control register for pads 0 to 27
+  int c_BCM2835_PADS_GPIO_28_45 "BCM2835_PADS_GPIO_28_45"  # Pad control register for pads 28 to 45
+  int c_BCM2835_PADS_GPIO_46_53 "BCM2835_PADS_GPIO_46_53" # Pad control register for pads 46 to 53
+  
+  int c_BCM2835_PAD_PASSWRD "BCM2835_PAD_PASSWRD"  # Password to enable setting pad mask
+  int c_BCM2835_PAD_SLEW_RATE_UNLIMITED "BCM2835_PAD_SLEW_RATE_UNLIMITED"  # Slew rate unlimited
+  int c_BCM2835_PAD_HYSTERESIS_ENABLED "BCM2835_PAD_HYSTERESIS_ENABLED"  # Hysteresis enabled
+  int c_BCM2835_PAD_DRIVE_2mA "BCM2835_PAD_DRIVE_2mA"  # 2mA drive current
+  int c_BCM2835_PAD_DRIVE_4mA "BCM2835_PAD_DRIVE_4mA"  # 4mA drive current
+  int c_BCM2835_PAD_DRIVE_6mA "BCM2835_PAD_DRIVE_6mA"  # 6mA drive current
+  int c_BCM2835_PAD_DRIVE_8mA "BCM2835_PAD_DRIVE_8mA"  # 8mA drive current
+  int c_BCM2835_PAD_DRIVE_10mA "BCM2835_PAD_DRIVE_10mA"  # 10mA drive current
+  int c_BCM2835_PAD_DRIVE_12mA "BCM2835_PAD_DRIVE_12mA"  # 12mA drive current
+  int c_BCM2835_PAD_DRIVE_14mA "BCM2835_PAD_DRIVE_14mA"  # 14mA drive current
+  int c_BCM2835_PAD_DRIVE_16mA "BCM2835_PAD_DRIVE_16mA"  # 16mA drive current
+
+
   int c_BCM2835_SPI0_CS "BCM2835_SPI0_CS"
   int c_BCM2835_SPI0_FIFO "BCM2835_SPI0_FIFO"
   int c_BCM2835_SPI0_CLK "BCM2835_SPI0_CLK"
@@ -164,6 +181,12 @@ cdef extern from "_bcm2835.h" nogil:
     c_BCM2835_GPIO_PUD_OFF "BCM2835_GPIO_PUD_OFF"  # Off ? disable pull-up/down
     c_BCM2835_GPIO_PUD_DOWN "BCM2835_GPIO_PUD_DOWN"  # Enable Pull Down control
     c_BCM2835_GPIO_PUD_UP "BCM2835_GPIO_PUD_UP"  # Enable Pull Up control
+
+  ctypedef enum c_RPiGPIOPin "bcm2835PadGroup":
+    c_BCM2835_PAD_GROUP_GPIO_0_27  "BCM2835_PAD_GROUP_GPIO_0_27"   # Pad group for GPIO pads 0 to 27
+    c_BCM2835_PAD_GROUP_GPIO_28_45 "BCM2835_PAD_GROUP_GPIO_28_45"  # Pad group for GPIO pads 28 to 45
+    c_BCM2835_PAD_GROUP_GPIO_46_53 "BCM2835_PAD_GROUP_GPIO_46_53"  # Pad group for GPIO pads 46 to 53
+
 
   ctypedef enum c_RPiGPIOPin "RPiGPIOPin":
     # RPi Version 1
