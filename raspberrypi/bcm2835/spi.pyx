@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from _bcm2835 cimport *
 __author__ = 'vahid'
 __all__ = [
   "SPI_BIT_ORDER_LSBFIRST",
