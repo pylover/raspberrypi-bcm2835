@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# distutils: libraries = bcm2835
 from libc.stdint cimport uintptr_t, uint32_t, uint8_t, uint64_t, uint16_t
 __author__ = 'vahid'
 
@@ -326,17 +327,17 @@ cdef extern from "bcm2835.h" nogil:
 
 
   # Variables
-  extern uintptr_t c_bcm2835_gpio "bcm2835_gpio"
+  extern uint32_t* c_bcm2835_gpio "bcm2835_gpio"
 
   # Functions
   extern int c_bcm2835_init "bcm2835_init" ()
   extern int c_bcm2835_close "bcm2835_close" ()
   extern void c_bcm2835_set_debug "bcm2835_set_debug" (uint8_t debug)
-  extern uint32_t c_bcm2835_peri_read "bcm2835_peri_read" (uintptr_t paddr)
-  extern uint32_t c_bcm2835_peri_read_nb "bcm2835_peri_read_nb" (uintptr_t paddr)
-  extern void c_bcm2835_peri_write "bcm2835_peri_write" (uintptr_t paddr, uint32_t value)
-  extern void c_bcm2835_peri_write_nb "bcm2835_peri_write_nb" (uintptr_t paddr, uint32_t value)
-  extern void c_bcm2835_peri_set_bits "bcm2835_peri_set_bits" (uintptr_t paddr, uint32_t value, uint32_t mask)
+  extern uint32_t c_bcm2835_peri_read "bcm2835_peri_read" (uint32_t* paddr)
+  extern uint32_t c_bcm2835_peri_read_nb "bcm2835_peri_read_nb" (uint32_t* paddr)
+  extern void c_bcm2835_peri_write "bcm2835_peri_write" (uint32_t* paddr, uint32_t value)
+  extern void c_bcm2835_peri_write_nb "bcm2835_peri_write_nb" (uint32_t* paddr, uint32_t value)
+  extern void c_bcm2835_peri_set_bits "bcm2835_peri_set_bits" (uint32_t* paddr, uint32_t value, uint32_t mask)
   extern void c_bcm2835_gpio_fsel "bcm2835_gpio_fsel" (uint8_t pin, uint8_t mode)
   extern void c_bcm2835_gpio_set "bcm2835_gpio_set" (uint8_t pin)
   extern void c_bcm2835_gpio_clr "bcm2835_gpio_clr" (uint8_t pin)

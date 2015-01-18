@@ -14,13 +14,13 @@ __all__ = [
 
 """
 Defines for ST
-GPIO register offsets from BCM2835_ST_BASE.
+GPIO register offsets from ST_BASE.
 Offsets into the ST Peripheral block in bytes per 12.1 System Timer Registers
 The System Timer peripheral provides four 32-bit timer channels and a single 64-bit free running counter.
-BCM2835_ST_CLO is the System Timer Counter Lower bits register.
+ST_CLO is the System Timer Counter Lower bits register.
 The system timer free-running counter lower register is a read-only register that returns the current value
 of the lower 32-bits of the free running counter.
-BCM2835_ST_CHI is the System Timer Counter Upper bits register.
+ST_CHI is the System Timer Counter Upper bits register.
 The system timer free-running counter upper register is a read-only register that returns the current value
 """
 ST_CS = c_BCM2835_ST_CS  # System Timer Control/Status

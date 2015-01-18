@@ -83,7 +83,7 @@ Typical applications include sensors and Secure Digital (SD) cards in embedded s
 
 """
 Defines for SPI
-GPIO register offsets from BCM2835_SPI0_BASE.
+GPIO register offsets from SPI0_BASE.
 Offsets into the SPI Peripheral block in bytes per 10.5 SPI Register Map
 """
 SPI0_CS = c_BCM2835_SPI0_CS  # SPI Master Control and Status
@@ -196,19 +196,19 @@ SPI_CLOCK_DIVIDER_1 = c_BCM2835_SPI_CLOCK_DIVIDER_1  # ///< 1 = 262.144us = 3.81
     Sets the SPI bit order
     NOTE: has no effect. Not supported by SPI0.
     Defaults to
-    \param[in] order The desired bit order, one of BCM2835_SPI_BIT_ORDER_*,
+    \param[in] order The desired bit order, one of SPI_BIT_ORDER_*,
     see \ref bcm2835SPIBitOrder
     extern void bcm2835_spi_setBitOrder(uint8_t order);
 
     Sets the SPI clock divider and therefore the
     SPI clock speed.
-    \param[in] divider The desired SPI clock divider, one of BCM2835_SPI_CLOCK_DIVIDER_*,
+    \param[in] divider The desired SPI clock divider, one of SPI_CLOCK_DIVIDER_*,
     see \ref bcm2835SPIClockDivider
     extern void bcm2835_spi_setClockDivider(uint16_t divider);
 
     Sets the SPI data mode
     Sets the clock polariy and phase
-    \param[in] mode The desired data mode, one of BCM2835_SPI_MODE*,
+    \param[in] mode The desired data mode, one of SPI_MODE*,
     see \ref bcm2835SPIMode
     extern void bcm2835_spi_setDataMode(uint8_t mode);
 
@@ -217,7 +217,7 @@ SPI_CLOCK_DIVIDER_1 = c_BCM2835_SPI_CLOCK_DIVIDER_1  # ///< 1 = 262.144us = 3.81
     When an bcm2835_spi_transfer() is made, the selected pin(s) will be asserted during the
     transfer.
     \param[in] cs Specifies the CS pins(s) that are used to activate the desired slave.
-      One of BCM2835_SPI_CS*, see \ref bcm2835SPIChipSelect
+      One of SPI_CS*, see \ref bcm2835SPIChipSelect
     extern void bcm2835_spi_chipSelect(uint8_t cs);
 
     Sets the chip select pin polarity for a given pin

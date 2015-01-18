@@ -122,7 +122,7 @@ PWM_CLOCK_DIVIDER_1 = c_BCM2835_PWM_CLOCK_DIVIDER_1  # ///< 1 = 4.6875kHz, same 
   Sets the PWM clock divisor,
   to control the basic PWM pulse widths.
   \param[in] divisor Divides the basic 19.2MHz PWM clock. You can use one of the common
-  values BCM2835_PWM_CLOCK_DIVIDER_* in \ref bcm2835PWMClockDivider.
+  values PWM_CLOCK_DIVIDER_* in \ref bcm2835PWMClockDivider.
   extern void bcm2835_pwm_set_clock(uint32_t divisor);
 
   Sets the mode of the given PWM channel,

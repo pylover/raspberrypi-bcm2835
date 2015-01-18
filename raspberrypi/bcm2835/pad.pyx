@@ -4,7 +4,7 @@ __author__ = 'vahid'
 
 
 """
-Pad control register offsets from BCM2835_GPIO_PADS
+Pad control register offsets from GPIO_PADS
 """
 BCM2835_PADS_GPIO_0_27 = c_BCM2835_PADS_GPIO_0_27  # Pad control register for pads 0 to 27
 BCM2835_PADS_GPIO_28_45 = c_BCM2835_PADS_GPIO_28_45  # Pad control register for pads 28 to 45
@@ -37,14 +37,14 @@ BCM2835_PAD_GROUP_GPIO_46_53 = c_BCM2835_PAD_GROUP_GPIO_46_53  # Pad group for G
 
 """
     Reads and returns the Pad Control for the given GPIO group.
-    \param[in] group The GPIO pad group number, one of BCM2835_PAD_GROUP_GPIO_*
-    \return Mask of bits from BCM2835_PAD_* from \ref bcm2835PadGroup
+    \param[in] group The GPIO pad group number, one of PAD_GROUP_GPIO_*
+    \return Mask of bits from PAD_* from \ref bcm2835PadGroup
     extern uint32_t bcm2835_gpio_pad(uint8_t group);
 
     Sets the Pad Control for the given GPIO group.
-    \param[in] group The GPIO pad group number, one of BCM2835_PAD_GROUP_GPIO_*
-    \param[in] control Mask of bits from BCM2835_PAD_* from \ref bcm2835PadGroup. Note
-    that it is not necessary to include BCM2835_PAD_PASSWRD in the mask as this
+    \param[in] group The GPIO pad group number, one of PAD_GROUP_GPIO_*
+    \param[in] control Mask of bits from PAD_* from \ref bcm2835PadGroup. Note
+    that it is not necessary to include PAD_PASSWRD in the mask as this
     is automatically included.
     extern void bcm2835_gpio_set_pad(uint8_t group, uint32_t control);
 """

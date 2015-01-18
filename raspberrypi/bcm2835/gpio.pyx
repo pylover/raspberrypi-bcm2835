@@ -144,7 +144,7 @@ __all__ = [
 Defines for GPIO
 The BCM2835 has 54 GPIO pins.
   BCM2835 data sheet, Page 90 onwards.
-  GPIO register offsets from BCM2835_GPIO_BASE. Offsets into the GPIO Peripheral block in bytes per 6.1 Register View
+  GPIO register offsets from GPIO_BASE. Offsets into the GPIO Peripheral block in bytes per 6.1 Register View
 """
 GPFSEL0 = c_BCM2835_GPFSEL0       # GPIO Function Select 0
 GPFSEL1 = c_BCM2835_GPFSEL1       # GPIO Function Select 1
@@ -285,7 +285,7 @@ def get_gpio_base_address():
   Returns the GPIO base mapped address. Available after init() function called.
   :return: int, The base mapped address of the GPIO peripheral
   """
-  return c_bcm2835_gpio
+  return <uint32_t>c_bcm2835_gpio
 
 
 def gpio_fsel(pin, mode):
@@ -297,7 +297,7 @@ def gpio_fsel(pin, mode):
   the pin as Input, Output or one of the 6 alternate functions.
 
   :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  :param mode: Mode to set the pin to, one of BCM2835_GPIO_FSEL_* from \ref bcm2835FunctionSelect
+  :param mode: Mode to set the pin to, one of GPIO_FSEL_* from \ref bcm2835FunctionSelect
   :return:
   """
   c_bcm2835_gpio_fsel(pin, mode)
@@ -507,7 +507,7 @@ def gpio_pud(pud):
   used with bcm2835_gpio_pudclk() to set the  Pull-up/down resistor for the given pin.
   However, it is usually more convenient to use bcm2835_gpio_set_pud().
 
-  :param pud: The desired Pull-up/down mode. One of BCM2835_GPIO_PUD_* from bcm2835PUDControl
+  :param pud: The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
   """
   c_bcm2835_gpio_pud(pud)
 
@@ -539,7 +539,7 @@ def gpio_pud(pud):
     Sets the Pull-up/down mode for the specified pin. This is more convenient than
     clocking the mode in with bcm2835_gpio_pud() and bcm2835_gpio_pudclk().
     \param[in] pin GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-    \param[in] pud The desired Pull-up/down mode. One of BCM2835_GPIO_PUD_* from bcm2835PUDControl
+    \param[in] pud The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
     extern void bcm2835_gpio_set_pud(uint8_t pin, uint8_t pud);
 
 

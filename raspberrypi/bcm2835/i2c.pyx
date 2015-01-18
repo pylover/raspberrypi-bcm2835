@@ -58,7 +58,7 @@ I2C_REASON_ERROR_DATA = c_BCM2835_I2C_REASON_ERROR_DATA  # ///< Not all data is 
     extern void bcm2835_i2c_setSlaveAddress(uint8_t addr);
 
     Sets the I2C clock divider and therefore the I2C clock speed.
-    \param[in] divider The desired I2C clock divider, one of BCM2835_I2C_CLOCK_DIVIDER_*,
+    \param[in] divider The desired I2C clock divider, one of I2C_CLOCK_DIVIDER_*,
     see \ref bcm2835I2CClockDivider
     extern void bcm2835_i2c_setClockDivider(uint16_t divider);
 

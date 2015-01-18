@@ -99,7 +99,7 @@ def peri_read(paddr):
   :return: the value read from the 32 bit register
   """
 
-  return c_bcm2835_peri_read(<uintptr_t> paddr)
+  return c_bcm2835_peri_read(<uint32_t*> <uint32_t> paddr)
 
 
 def peri_read_nb(paddr):
@@ -110,7 +110,7 @@ def peri_read_nb(paddr):
   :param paddr: Physical address to read from. See BCM2835_GPIO_BASE etc.
   :return: the value read from the 32 bit register
   """
-  return c_bcm2835_peri_read_nb(<uintptr_t> paddr)
+  return c_bcm2835_peri_read_nb(<uint32_t*> <uint32_t> paddr)
 
 
 def peri_write(paddr, value):
@@ -119,10 +119,10 @@ def peri_write(paddr, value):
   The write is done twice, and is therefore always safe in terms of
   manual section 1.3 Peripheral access precautions for correct memory ordering
 
-  :param paddr: Physical address to read from. See BCM2835_GPIO_BASE etc.
+  :param paddr: Physical address to read from. See GPIO_BASE etc.
   :param value: The 32 bit value to write
   """
-  c_bcm2835_peri_write(<uintptr_t> paddr, value)
+  c_bcm2835_peri_write(<uint32_t*> <uint32_t> paddr, value)
 
 
 def peri_write_nb(paddr, value):
@@ -131,10 +131,10 @@ def peri_write_nb(paddr, value):
   You should only use this when your code has previously called bcm2835_peri_write()
   within the same peripheral, and no other peripheral access has occurred since.
 
-  :param paddr: Physical address to read from. See BCM2835_GPIO_BASE etc.
+  :param paddr: Physical address to read from. See GPIO_BASE etc.
   :param value: The 32 bit value to write
   """
-  c_bcm2835_peri_write_nb(<uintptr_t> paddr, value)
+  c_bcm2835_peri_write_nb(<uint32_t*> <uint32_t> paddr, value)
 
 
 def peri_set_bits(paddr, value, mask):
@@ -147,9 +147,9 @@ def peri_set_bits(paddr, value, mask):
   The write is done twice, and is therefore always safe in terms of
   manual section 1.3 Peripheral access precautions for correct memory ordering
 
-  :param paddr: Physical address to read from. See BCM2835_GPIO_BASE etc.
+  :param paddr: Physical address to read from. See GPIO_BASE etc.
   :param value: The 32 bit value to write, masked in by mask.
   :param mask: Bitmask that defines the bits that will be altered in the register.
   :return:
   """
-  c_bcm2835_peri_set_bits(<uintptr_t> paddr, value, mask)
+  c_bcm2835_peri_set_bits(<uint32_t*> <uint32_t> paddr, value, mask)

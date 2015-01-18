@@ -6,22 +6,30 @@ import re
 
 __author__ = 'vahid'
 
-# Reading bcm2835 version (same way sqlalchemy does)
-# with open(os.path.join(os.path.dirname(__file__), 'raspberrypi', 'c_bcm2835', '__init__.pyx')) as v_file:
-#   package_version = re.compile(r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
-package_version = '0.2.0-prealpha'
+# Reading package version (same way sqlalchemy does)
+with open(os.path.join(os.path.dirname(__file__), 'raspberrypi', 'bcm2835', '__init__.py')) as v_file:
+  package_version = re.compile(r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
 
 long_description = """
 Raspberry Pi bcm2835 api and c extension for python
 ===================================================
 """
 
-
 ext_modules = [
-  Extension('lib.bcm2835', ["lib/bcm2835.c"]),
-  Extension('raspberrypi.bcm2835.common', ["raspberrypi/bcm2835/common.pyx"])
+  Extension(name=e, sources=[e.replace('.', '/') + '.pyx'])
+  for e in [
+    'raspberrypi.bcm2835.' + p
+    for p in (
+      'common',
+      'gpio',
+      'bsc',
+      'i2c',
+      'pad',
+      'pwm',
+      'spi',
+      'st'
+    )]
 ]
-
 
 setup(
   name='raspberrypi-bcm2835',
@@ -33,22 +41,10 @@ setup(
   long_description=long_description,
   license="GPLv3",
   packages=find_packages(),
-  ext_modules=cythonize(ext_modules,
-  #                      include_path = ['lib']
-  ),
-#   ext_modules=cythonize([
-#     Extension("raspberrypi.bcm2835", [
-#       "lib/bcm2835.c",
-#       "raspberrypi/c_bcm2835/__init__.pyx",
-#       "raspberrypi/c_bcm2835/common.pyx",
-# #      "raspberrypi/c_bcm2835/gpio.pyx",
-# #      "raspberrypi/c_bcm2835/bsc.pyx",
-#
-#       ],include_dirs=[ 'lib' ,'.'])
-#  ]),
+  ext_modules=cythonize(ext_modules),
   # entry_points={
-  #     'console_scripts': [
-  #         'raspy.gpio= raspy.gpio:main'
+  # 'console_scripts': [
+  # 'raspy.gpio= raspy.gpio:main'
   #     ]
   # },
   classifiers=[
