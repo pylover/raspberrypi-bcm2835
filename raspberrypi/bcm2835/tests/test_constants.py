@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 __author__ = 'vahid'
 
 import unittest
@@ -5,7 +6,7 @@ import unittest
 from raspberrypi.bcm2835 import *
 
 
-class TestBCM2835Extension(unittest.TestCase):
+class TestBCM2835Constants(unittest.TestCase):
 
   def test_constants(self):
 
@@ -152,6 +153,21 @@ class TestBCM2835Extension(unittest.TestCase):
     self.assertEqual(PWM0_SERIAL, 0x0002)
     self.assertEqual(PWM0_ENABLE, 0x0001)
 
+    self.assertEqual(BCM2835_PADS_GPIO_0_27, 0x002c)
+    self.assertEqual(BCM2835_PADS_GPIO_28_45, 0x0030)
+    self.assertEqual(BCM2835_PADS_GPIO_46_53, 0x0034)
+
+    self.assertEqual(BCM2835_PAD_PASSWRD, (0x5A << 24))
+    self.assertEqual(BCM2835_PAD_SLEW_RATE_UNLIMITED, 0x10)
+    self.assertEqual(BCM2835_PAD_HYSTERESIS_ENABLED, 0x08)
+    self.assertEqual(BCM2835_PAD_DRIVE_2mA, 0x00)
+    self.assertEqual(BCM2835_PAD_DRIVE_4mA, 0x01)
+    self.assertEqual(BCM2835_PAD_DRIVE_6mA, 0x02)
+    self.assertEqual(BCM2835_PAD_DRIVE_8mA, 0x03)
+    self.assertEqual(BCM2835_PAD_DRIVE_10mA, 0x04)
+    self.assertEqual(BCM2835_PAD_DRIVE_12mA, 0x05)
+    self.assertEqual(BCM2835_PAD_DRIVE_14mA, 0x06)
+    self.assertEqual(BCM2835_PAD_DRIVE_16mA, 0x07)
 
     ## Enums
 
@@ -296,22 +312,6 @@ class TestBCM2835Extension(unittest.TestCase):
     self.assertEqual(PWM_CLOCK_DIVIDER_2, 2)
     self.assertEqual(PWM_CLOCK_DIVIDER_1, 1)
     
-    self.assertEqual(BCM2835_PADS_GPIO_0_27, 0x002c)
-    self.assertEqual(BCM2835_PADS_GPIO_28_45, 0x0030)
-    self.assertEqual(BCM2835_PADS_GPIO_46_53, 0x0034)
-
-    self.assertEqual(BCM2835_PAD_PASSWRD, (0x5A << 24))
-    self.assertEqual(BCM2835_PAD_SLEW_RATE_UNLIMITED, 0x10)
-    self.assertEqual(BCM2835_PAD_HYSTERESIS_ENABLED, 0x08)
-    self.assertEqual(BCM2835_PAD_DRIVE_2mA, 0x00)
-    self.assertEqual(BCM2835_PAD_DRIVE_4mA, 0x01)
-    self.assertEqual(BCM2835_PAD_DRIVE_6mA, 0x02)
-    self.assertEqual(BCM2835_PAD_DRIVE_8mA, 0x03)
-    self.assertEqual(BCM2835_PAD_DRIVE_10mA, 0x04)
-    self.assertEqual(BCM2835_PAD_DRIVE_12mA, 0x05)
-    self.assertEqual(BCM2835_PAD_DRIVE_14mA, 0x06)
-    self.assertEqual(BCM2835_PAD_DRIVE_16mA, 0x07)
-
     self.assertEqual(BCM2835_PAD_GROUP_GPIO_0_27, 0)
     self.assertEqual(BCM2835_PAD_GROUP_GPIO_28_45, 1)
     self.assertEqual(BCM2835_PAD_GROUP_GPIO_46_53, 2)
