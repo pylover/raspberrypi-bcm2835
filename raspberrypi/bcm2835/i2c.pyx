@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+These functions let you use I2C (The Broadcom Serial Control bus with the Philips I2C bus/interface version 2.1 January 2000.) to interface with an external I2C device.
+"""
 from _bcm2835 cimport *
 __author__ = 'vahid'
 __all__ = [
@@ -34,47 +37,73 @@ I2C_REASON_ERROR_CLKT = c_BCM2835_I2C_REASON_ERROR_CLKT  # ///< Received Clock S
 I2C_REASON_ERROR_DATA = c_BCM2835_I2C_REASON_ERROR_DATA  # ///< Not all data is sent / received
 
 
-"""
-    \defgroup i2c I2C access
-    These functions let you use I2C (The Broadcom Serial Control bus with the Philips
-    I2C bus/interface version 2.1 January 2000.) to interface with an external I2C device.
-    @{
-
+def i2c_begin():
+    """
     Start I2C operations.
-    Forces RPi I2C pins P1-03 (SDA) and P1-05 (SCL)
-    to alternate function ALT0, which enables those pins for I2C interface.
-    You should call bcm2835_i2c_end() when all I2C functions are complete to return the pins to
-    their default functions
-    \sa  bcm2835_i2c_end()
-    extern void bcm2835_i2c_begin(void);
+    Forces RPi I2C pins P1-03 (SDA) and P1-05 (SCL) to alternate function ALT0, which enables those pins for I2C interface.
+    You should call bcm2835_i2c_end() when all I2C functions are complete to return the pins to their default functions
+    :sa: bcm2835_i2c_end()
+    :return:
+    """
+    c_bcm2835_i2c_begin()
 
+
+def i2c_end():
+    """
     End I2C operations.
-    I2C pins P1-03 (SDA) and P1-05 (SCL)
-    are returned to their default INPUT behaviour.
-    extern void bcm2835_i2c_end(void);
+    I2C pins P1-03 (SDA) and P1-05 (SCL) are returned to their default INPUT behaviour.
 
+    :return:
+    """
+    c_bcm2835_i2c_end()
+
+
+def i2c_setSlaveAddress(uint8_t addr):
+    """
     Sets the I2C slave address.
-    \param[in] addr The I2C slave address.
-    extern void bcm2835_i2c_setSlaveAddress(uint8_t addr);
 
+    :param addr: The I2C slave address.
+    :return:
+    """
+    c_bcm2835_i2c_setSlaveAddress(addr)
+
+
+def i2c_setClockDivider(uint16_t divider):
+    """
     Sets the I2C clock divider and therefore the I2C clock speed.
-    \param[in] divider The desired I2C clock divider, one of I2C_CLOCK_DIVIDER_*,
-    see \ref bcm2835I2CClockDivider
-    extern void bcm2835_i2c_setClockDivider(uint16_t divider);
 
+    :param divider: The desired I2C clock divider, one of I2C_CLOCK_DIVIDER_*,
+    :return:
+    """
+    c_bcm2835_i2c_setClockDivider(divider)
+
+
+def i2c_set_baudrate(uint32_t baudrate):
+    """
     Sets the I2C clock divider by converting the baudrate parameter to
     the equivalent I2C clock divider. ( see \sa bcm2835_i2c_setClockDivider)
     For the I2C standard 100khz you would set baudrate to 100000
     The use of baudrate corresponds to its use in the I2C kernel device
     driver. (Of course, bcm2835 has nothing to do with the kernel driver)
-    extern void bcm2835_i2c_set_baudrate(uint32_t baudrate);
 
-    Transfers any number of bytes to the currently selected I2C slave.
-    (as previously set by \sa bcm2835_i2c_setSlaveAddress)
-    \param[in] buf Buffer of bytes to send.
-    \param[in] len Number of bytes in the buf buffer, and the number of bytes to send.
-	\return reason see \ref bcm2835I2CReasonCodes
-    extern uint8_t bcm2835_i2c_write(const char * buf, uint32_t len);
+    :param baudrate:
+    :return:
+    """
+    c_bcm2835_i2c_set_baudrate(baudrate)
+
+
+def i2c_write(const char * buf, uint32_t len):
+    """
+    Transfers any number of bytes to the currently selected I2C slave. (as previously set by \sa bcm2835_i2c_setSlaveAddress)
+
+    :param buf: Buffer of bytes to send.
+    :param len: Number of bytes in the buf buffer, and the number of bytes to send.
+    :return: uint8_t: reason see \ref bcm2835I2CReasonCodes
+    """
+    #return c_bcm2835_i2c_write(const char * buf, len);
+    pass
+"""
+
 
     Transfers any number of bytes from the currently selected I2C slave.
     (as previously set by \sa bcm2835_i2c_setSlaveAddress)

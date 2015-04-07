@@ -2,143 +2,142 @@
 from _bcm2835 cimport *
 __author__ = 'vahid'
 __all__ = [
-  'GPFSEL0',
-  'GPFSEL1',
-  'GPFSEL2',
-  'GPFSEL3',
-  'GPFSEL4',
-  'GPFSEL5',
-  'GPSET0',
-  'GPSET1',
-  'GPCLR0',
-  'GPCLR1',
-  'GPLEV0',
-  'GPLEV1',
-  'GPEDS0',
-  'GPEDS1',
-  'GPREN0',
-  'GPREN1',
-  'GPFEN0',
-  'GPFEN1',
-  'GPHEN0',
-  'GPHEN1',
-  'GPLEN0',
-  'GPLEN1',
-  'GPAREN0',
-  'GPAREN1',
-  'GPAFEN0',
-  'GPAFEN1',
-  'GPPUD',
-  'GPPUDCLK0',
-  'GPPUDCLK1',
+    'GPFSEL0',
+    'GPFSEL1',
+    'GPFSEL2',
+    'GPFSEL3',
+    'GPFSEL4',
+    'GPFSEL5',
+    'GPSET0',
+    'GPSET1',
+    'GPCLR0',
+    'GPCLR1',
+    'GPLEV0',
+    'GPLEV1',
+    'GPEDS0',
+    'GPEDS1',
+    'GPREN0',
+    'GPREN1',
+    'GPFEN0',
+    'GPFEN1',
+    'GPHEN0',
+    'GPHEN1',
+    'GPLEN0',
+    'GPLEN1',
+    'GPAREN0',
+    'GPAREN1',
+    'GPAFEN0',
+    'GPAFEN1',
+    'GPPUD',
+    'GPPUDCLK0',
+    'GPPUDCLK1',
 
-  'GPIO_FSEL_INPT',
-  'GPIO_FSEL_OUTP',
-  'GPIO_FSEL_ALT0',
-  'GPIO_FSEL_ALT1',
-  'GPIO_FSEL_ALT2',
-  'GPIO_FSEL_ALT3',
-  'GPIO_FSEL_ALT4',
-  'GPIO_FSEL_ALT5',
-  'GPIO_FSEL_MASK',
+    'GPIO_FSEL_INPT',
+    'GPIO_FSEL_OUTP',
+    'GPIO_FSEL_ALT0',
+    'GPIO_FSEL_ALT1',
+    'GPIO_FSEL_ALT2',
+    'GPIO_FSEL_ALT3',
+    'GPIO_FSEL_ALT4',
+    'GPIO_FSEL_ALT5',
+    'GPIO_FSEL_MASK',
 
-  'GPIO_PUD_OFF',
-  'GPIO_PUD_DOWN',
-  'GPIO_PUD_UP',
+    'GPIO_PUD_OFF',
+    'GPIO_PUD_DOWN',
+    'GPIO_PUD_UP',
 
-  'RPI_GPIO_P1_03',
-  'RPI_GPIO_P1_05',
-  'RPI_GPIO_P1_07',
-  'RPI_GPIO_P1_08',
-  'RPI_GPIO_P1_10',
-  'RPI_GPIO_P1_11',
-  'RPI_GPIO_P1_12',
-  'RPI_GPIO_P1_13',
-  'RPI_GPIO_P1_15',
-  'RPI_GPIO_P1_16',
-  'RPI_GPIO_P1_18',
-  'RPI_GPIO_P1_19',
-  'RPI_GPIO_P1_21',
-  'RPI_GPIO_P1_22',
-  'RPI_GPIO_P1_23',
-  'RPI_GPIO_P1_24',
-  'RPI_GPIO_P1_26',
+    'RPI_GPIO_P1_03',
+    'RPI_GPIO_P1_05',
+    'RPI_GPIO_P1_07',
+    'RPI_GPIO_P1_08',
+    'RPI_GPIO_P1_10',
+    'RPI_GPIO_P1_11',
+    'RPI_GPIO_P1_12',
+    'RPI_GPIO_P1_13',
+    'RPI_GPIO_P1_15',
+    'RPI_GPIO_P1_16',
+    'RPI_GPIO_P1_18',
+    'RPI_GPIO_P1_19',
+    'RPI_GPIO_P1_21',
+    'RPI_GPIO_P1_22',
+    'RPI_GPIO_P1_23',
+    'RPI_GPIO_P1_24',
+    'RPI_GPIO_P1_26',
 
-  'RPI_V2_GPIO_P1_03',
-  'RPI_V2_GPIO_P1_05',
-  'RPI_V2_GPIO_P1_07',
-  'RPI_V2_GPIO_P1_08',
-  'RPI_V2_GPIO_P1_10',
-  'RPI_V2_GPIO_P1_11',
-  'RPI_V2_GPIO_P1_12',
-  'RPI_V2_GPIO_P1_13',
-  'RPI_V2_GPIO_P1_15',
-  'RPI_V2_GPIO_P1_16',
-  'RPI_V2_GPIO_P1_18',
-  'RPI_V2_GPIO_P1_19',
-  'RPI_V2_GPIO_P1_21',
-  'RPI_V2_GPIO_P1_22',
-  'RPI_V2_GPIO_P1_23',
-  'RPI_V2_GPIO_P1_24',
-  'RPI_V2_GPIO_P1_26',
+    'RPI_V2_GPIO_P1_03',
+    'RPI_V2_GPIO_P1_05',
+    'RPI_V2_GPIO_P1_07',
+    'RPI_V2_GPIO_P1_08',
+    'RPI_V2_GPIO_P1_10',
+    'RPI_V2_GPIO_P1_11',
+    'RPI_V2_GPIO_P1_12',
+    'RPI_V2_GPIO_P1_13',
+    'RPI_V2_GPIO_P1_15',
+    'RPI_V2_GPIO_P1_16',
+    'RPI_V2_GPIO_P1_18',
+    'RPI_V2_GPIO_P1_19',
+    'RPI_V2_GPIO_P1_21',
+    'RPI_V2_GPIO_P1_22',
+    'RPI_V2_GPIO_P1_23',
+    'RPI_V2_GPIO_P1_24',
+    'RPI_V2_GPIO_P1_26',
 
-  'RPI_V2_GPIO_P5_03',
-  'RPI_V2_GPIO_P5_04',
-  'RPI_V2_GPIO_P5_05',
-  'RPI_V2_GPIO_P5_06',
+    'RPI_V2_GPIO_P5_03',
+    'RPI_V2_GPIO_P5_04',
+    'RPI_V2_GPIO_P5_05',
+    'RPI_V2_GPIO_P5_06',
 
-  'RPI_B_PLUS_GPIO_J8_03',
-  'RPI_B_PLUS_GPIO_J8_05',
-  'RPI_B_PLUS_GPIO_J8_07',
-  'RPI_B_PLUS_GPIO_J8_08',
-  'RPI_B_PLUS_GPIO_J8_10',
-  'RPI_B_PLUS_GPIO_J8_11',
-  'RPI_B_PLUS_GPIO_J8_12',
-  'RPI_B_PLUS_GPIO_J8_13',
-  'RPI_B_PLUS_GPIO_J8_15',
-  'RPI_B_PLUS_GPIO_J8_16',
-  'RPI_B_PLUS_GPIO_J8_18',
-  'RPI_B_PLUS_GPIO_J8_19',
-  'RPI_B_PLUS_GPIO_J8_21',
-  'RPI_B_PLUS_GPIO_J8_22',
-  'RPI_B_PLUS_GPIO_J8_23',
-  'RPI_B_PLUS_GPIO_J8_24',
-  'RPI_B_PLUS_GPIO_J8_26',
-  'RPI_B_PLUS_GPIO_J8_29',
-  'RPI_B_PLUS_GPIO_J8_31',
-  'RPI_B_PLUS_GPIO_J8_32',
-  'RPI_B_PLUS_GPIO_J8_33',
-  'RPI_B_PLUS_GPIO_J8_35',
-  'RPI_B_PLUS_GPIO_J8_36',
-  'RPI_B_PLUS_GPIO_J8_37',
-  'RPI_B_PLUS_GPIO_J8_38',
-  'RPI_B_PLUS_GPIO_J8_40',
+    'RPI_B_PLUS_GPIO_J8_03',
+    'RPI_B_PLUS_GPIO_J8_05',
+    'RPI_B_PLUS_GPIO_J8_07',
+    'RPI_B_PLUS_GPIO_J8_08',
+    'RPI_B_PLUS_GPIO_J8_10',
+    'RPI_B_PLUS_GPIO_J8_11',
+    'RPI_B_PLUS_GPIO_J8_12',
+    'RPI_B_PLUS_GPIO_J8_13',
+    'RPI_B_PLUS_GPIO_J8_15',
+    'RPI_B_PLUS_GPIO_J8_16',
+    'RPI_B_PLUS_GPIO_J8_18',
+    'RPI_B_PLUS_GPIO_J8_19',
+    'RPI_B_PLUS_GPIO_J8_21',
+    'RPI_B_PLUS_GPIO_J8_22',
+    'RPI_B_PLUS_GPIO_J8_23',
+    'RPI_B_PLUS_GPIO_J8_24',
+    'RPI_B_PLUS_GPIO_J8_26',
+    'RPI_B_PLUS_GPIO_J8_29',
+    'RPI_B_PLUS_GPIO_J8_31',
+    'RPI_B_PLUS_GPIO_J8_32',
+    'RPI_B_PLUS_GPIO_J8_33',
+    'RPI_B_PLUS_GPIO_J8_35',
+    'RPI_B_PLUS_GPIO_J8_36',
+    'RPI_B_PLUS_GPIO_J8_37',
+    'RPI_B_PLUS_GPIO_J8_38',
+    'RPI_B_PLUS_GPIO_J8_40',
 
-  # Functions
-  'gpio_fsel',
-  'gpio_set',
-  'gpio_clr',
-  'gpio_set_multi',
-  'gpio_clr_multi',
-  'gpio_lev',
-  'gpio_eds',
-  'gpio_set_eds',
-  'gpio_ren',
-  'gpio_clr_ren',
-  'gpio_fen',
-  'gpio_clr_fen',
-  'gpio_hen',
-  'gpio_clr_hen',
-  'gpio_len',
-  'gpio_clr_len',
-  'gpio_aren',
-  'gpio_clr_aren',
-  'gpio_afen',
-  'gpio_clr_afen',
-  'get_gpio_base_address'
+    # Functions
+    'gpio_fsel',
+    'gpio_set',
+    'gpio_clr',
+    'gpio_set_multi',
+    'gpio_clr_multi',
+    'gpio_lev',
+    'gpio_eds',
+    'gpio_set_eds',
+    'gpio_ren',
+    'gpio_clr_ren',
+    'gpio_fen',
+    'gpio_clr_fen',
+    'gpio_hen',
+    'gpio_clr_hen',
+    'gpio_len',
+    'gpio_clr_len',
+    'gpio_aren',
+    'gpio_clr_aren',
+    'gpio_afen',
+    'gpio_clr_afen',
+    'get_gpio_base_address'
 
 ]
-
 
 """
 Defines for GPIO
@@ -146,36 +145,35 @@ The BCM2835 has 54 GPIO pins.
   BCM2835 data sheet, Page 90 onwards.
   GPIO register offsets from GPIO_BASE. Offsets into the GPIO Peripheral block in bytes per 6.1 Register View
 """
-GPFSEL0 = c_BCM2835_GPFSEL0       # GPIO Function Select 0
-GPFSEL1 = c_BCM2835_GPFSEL1       # GPIO Function Select 1
-GPFSEL2 = c_BCM2835_GPFSEL2       # GPIO Function Select 2
-GPFSEL3 = c_BCM2835_GPFSEL3       # GPIO Function Select 3
-GPFSEL4 = c_BCM2835_GPFSEL4       # GPIO Function Select 4
-GPFSEL5 = c_BCM2835_GPFSEL5       # GPIO Function Select 5
-GPSET0 = c_BCM2835_GPSET0         # GPIO Pin Output Set 0
-GPSET1 = c_BCM2835_GPSET1         # GPIO Pin Output Set 1
-GPCLR0 = c_BCM2835_GPCLR0         # GPIO Pin Output Clear 0
-GPCLR1 = c_BCM2835_GPCLR1         # GPIO Pin Output Clear 1
-GPLEV0 = c_BCM2835_GPLEV0         # GPIO Pin Level 0
-GPLEV1 = c_BCM2835_GPLEV1         # GPIO Pin Level 1
-GPEDS0 = c_BCM2835_GPEDS0         # GPIO Pin Event Detect Status 0
-GPEDS1 = c_BCM2835_GPEDS1         # GPIO Pin Event Detect Status 1
-GPREN0 = c_BCM2835_GPREN0         # GPIO Pin Rising Edge Detect Enable 0
-GPREN1 = c_BCM2835_GPREN1         # GPIO Pin Rising Edge Detect Enable 1
-GPFEN0 = c_BCM2835_GPFEN0         # GPIO Pin Falling Edge Detect Enable 0
-GPFEN1 = c_BCM2835_GPFEN1         # GPIO Pin Falling Edge Detect Enable 1
-GPHEN0 = c_BCM2835_GPHEN0         # GPIO Pin High Detect Enable 0
-GPHEN1 = c_BCM2835_GPHEN1         # GPIO Pin High Detect Enable 1
-GPLEN0 = c_BCM2835_GPLEN0         # GPIO Pin Low Detect Enable 0
-GPLEN1 = c_BCM2835_GPLEN1         # GPIO Pin Low Detect Enable 1
-GPAREN0 = c_BCM2835_GPAREN0       # GPIO Pin Async. Rising Edge Detect 0
-GPAREN1 = c_BCM2835_GPAREN1       # GPIO Pin Async. Rising Edge Detect 1
-GPAFEN0 = c_BCM2835_GPAFEN0       # GPIO Pin Async. Falling Edge Detect 0
-GPAFEN1 = c_BCM2835_GPAFEN1       # GPIO Pin Async. Falling Edge Detect 1
-GPPUD = c_BCM2835_GPPUD           # GPIO Pin Pull-up/down Enable
-GPPUDCLK0 = c_BCM2835_GPPUDCLK0   # GPIO Pin Pull-up/down Enable Clock 0
-GPPUDCLK1 = c_BCM2835_GPPUDCLK1   # GPIO Pin Pull-up/down Enable Clock 1
-
+GPFSEL0 = c_BCM2835_GPFSEL0  # GPIO Function Select 0
+GPFSEL1 = c_BCM2835_GPFSEL1  # GPIO Function Select 1
+GPFSEL2 = c_BCM2835_GPFSEL2  # GPIO Function Select 2
+GPFSEL3 = c_BCM2835_GPFSEL3  # GPIO Function Select 3
+GPFSEL4 = c_BCM2835_GPFSEL4  # GPIO Function Select 4
+GPFSEL5 = c_BCM2835_GPFSEL5  # GPIO Function Select 5
+GPSET0 = c_BCM2835_GPSET0  # GPIO Pin Output Set 0
+GPSET1 = c_BCM2835_GPSET1  # GPIO Pin Output Set 1
+GPCLR0 = c_BCM2835_GPCLR0  # GPIO Pin Output Clear 0
+GPCLR1 = c_BCM2835_GPCLR1  # GPIO Pin Output Clear 1
+GPLEV0 = c_BCM2835_GPLEV0  # GPIO Pin Level 0
+GPLEV1 = c_BCM2835_GPLEV1  # GPIO Pin Level 1
+GPEDS0 = c_BCM2835_GPEDS0  # GPIO Pin Event Detect Status 0
+GPEDS1 = c_BCM2835_GPEDS1  # GPIO Pin Event Detect Status 1
+GPREN0 = c_BCM2835_GPREN0  # GPIO Pin Rising Edge Detect Enable 0
+GPREN1 = c_BCM2835_GPREN1  # GPIO Pin Rising Edge Detect Enable 1
+GPFEN0 = c_BCM2835_GPFEN0  # GPIO Pin Falling Edge Detect Enable 0
+GPFEN1 = c_BCM2835_GPFEN1  # GPIO Pin Falling Edge Detect Enable 1
+GPHEN0 = c_BCM2835_GPHEN0  # GPIO Pin High Detect Enable 0
+GPHEN1 = c_BCM2835_GPHEN1  # GPIO Pin High Detect Enable 1
+GPLEN0 = c_BCM2835_GPLEN0  # GPIO Pin Low Detect Enable 0
+GPLEN1 = c_BCM2835_GPLEN1  # GPIO Pin Low Detect Enable 1
+GPAREN0 = c_BCM2835_GPAREN0  # GPIO Pin Async. Rising Edge Detect 0
+GPAREN1 = c_BCM2835_GPAREN1  # GPIO Pin Async. Rising Edge Detect 1
+GPAFEN0 = c_BCM2835_GPAFEN0  # GPIO Pin Async. Falling Edge Detect 0
+GPAFEN1 = c_BCM2835_GPAFEN1  # GPIO Pin Async. Falling Edge Detect 1
+GPPUD = c_BCM2835_GPPUD  # GPIO Pin Pull-up/down Enable
+GPPUDCLK0 = c_BCM2835_GPPUDCLK0  # GPIO Pin Pull-up/down Enable Clock 0
+GPPUDCLK1 = c_BCM2835_GPPUDCLK1  # GPIO Pin Pull-up/down Enable Clock 1
 
 """
 Port function select modes for bcm2835_gpio_fsel()
@@ -190,14 +188,12 @@ GPIO_FSEL_ALT4 = c_BCM2835_GPIO_FSEL_ALT4  # Alternate function 4
 GPIO_FSEL_ALT5 = c_BCM2835_GPIO_FSEL_ALT5  # Alternate function 5
 GPIO_FSEL_MASK = c_BCM2835_GPIO_FSEL_MASK  # Function select bits mask
 
-
 """
 Pullup/Pulldown defines for bcm2835_gpio_pud()
 """
 GPIO_PUD_OFF = c_BCM2835_GPIO_PUD_OFF  # Off ? disable pull-up/down
 GPIO_PUD_DOWN = c_BCM2835_GPIO_PUD_DOWN  # Enable Pull Down control
 GPIO_PUD_UP = c_BCM2835_GPIO_PUD_UP  # Enable Pull Up control
-
 
 """
 Here we define Raspberry Pin GPIO pins on P1 in terms of the underlying BCM GPIO pin numbers.
@@ -279,268 +275,268 @@ RPI_B_PLUS_GPIO_J8_37 = c_RPI_B_PLUS_GPIO_J8_37  # B+, Pin J8-37
 RPI_B_PLUS_GPIO_J8_38 = c_RPI_B_PLUS_GPIO_J8_38  # B+, Pin J8-38
 RPI_B_PLUS_GPIO_J8_40 = c_RPI_B_PLUS_GPIO_J8_40  # B+, Pin J8-40
 
-
 def get_gpio_base_address():
-  """
-  Returns the GPIO base mapped address. Available after init() function called.
-  :return: int, The base mapped address of the GPIO peripheral
-  """
-  return <uint32_t>c_bcm2835_gpio
-
+    """
+    Returns the GPIO base mapped address. Available after init() function called.
+    :return: int, The base mapped address of the GPIO peripheral
+    """
+    return <uint32_t> c_bcm2835_gpio
 
 def gpio_fsel(pin, mode):
-  """
-  These functions allow you to control the GPIO interface. You can set the
-  function of each GPIO pin, read the input state and set the output state.
+    """
+    These functions allow you to control the GPIO interface. You can set the
+    function of each GPIO pin, read the input state and set the output state.
 
-  Sets the Function Select register for the given pin, which configures
-  the pin as Input, Output or one of the 6 alternate functions.
+    Sets the Function Select register for the given pin, which configures
+    the pin as Input, Output or one of the 6 alternate functions.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  :param mode: Mode to set the pin to, one of GPIO_FSEL_* from \ref bcm2835FunctionSelect
-  :return:
-  """
-  c_bcm2835_gpio_fsel(pin, mode)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :param mode: Mode to set the pin to, one of GPIO_FSEL_* from \ref bcm2835FunctionSelect
+    :return:
+    """
+    c_bcm2835_gpio_fsel(pin, mode)
 
 def gpio_set(pin):
-  """
-  Sets the specified pin output to HIGH.
+    """
+    Sets the specified pin output to HIGH.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_set(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_set(pin)
 
 def gpio_clr(pin):
-  """
-  Sets the specified pin output to LOW.
+    """
+    Sets the specified pin output to LOW.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  :return:
-  """
-  c_bcm2835_gpio_clr(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :return:
+    """
+    c_bcm2835_gpio_clr(pin)
 
 def gpio_set_multi(mask):
-  """
-  Sets any of the first 32 GPIO output pins specified in the mask to HIGH.
+    """
+    Sets any of the first 32 GPIO output pins specified in the mask to HIGH.
 
-  :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
-  """
-  c_bcm2835_gpio_set_multi(mask)
-
+    :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
+    """
+    c_bcm2835_gpio_set_multi(mask)
 
 def gpio_clr_multi(mask):
-  """
-  Sets any of the first 32 GPIO output pins specified in the mask to LOW.
+    """
+    Sets any of the first 32 GPIO output pins specified in the mask to LOW.
 
-  :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
-  """
-  c_bcm2835_gpio_clr_multi(mask)
-
+    :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
+    """
+    c_bcm2835_gpio_clr_multi(mask)
 
 def gpio_lev(pin):
-  """
-  Reads the current level on the specified pin and returns either HIGH or LOW. Works whether or not the pin is an input or an output.
+    """
+    Reads the current level on the specified pin and returns either HIGH or LOW. Works whether or not the pin is an input or an output.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  :return: the current level, either HIGH or LOW
-  """
-  return c_bcm2835_gpio_lev(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :return: the current level, either HIGH or LOW
+    """
+    return c_bcm2835_gpio_lev(pin)
 
 def gpio_eds(pin):
-  """
-  Event Detect Status.
-  Tests whether the specified pin has detected a level or edge as requested by
-  bcm2835_gpio_ren()
-  bcm2835_gpio_fen()
-  bcm2835_gpio_hen()
-  bcm2835_gpio_len()
-  bcm2835_gpio_aren()
-  bcm2835_gpio_afen()
+    """
+    Event Detect Status.
+    Tests whether the specified pin has detected a level or edge as requested by
+    bcm2835_gpio_ren()
+    bcm2835_gpio_fen()
+    bcm2835_gpio_hen()
+    bcm2835_gpio_len()
+    bcm2835_gpio_aren()
+    bcm2835_gpio_afen()
 
-  Clear the flag for a given pin by calling bcm2835_gpio_set_eds(pin);
+    Clear the flag for a given pin by calling bcm2835_gpio_set_eds(pin);
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  :return: HIGH if the event detect status for the given pin is true.
-  """
-  return c_bcm2835_gpio_eds(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :return: HIGH if the event detect status for the given pin is true.
+    """
+    return c_bcm2835_gpio_eds(pin)
 
 def gpio_set_eds(pin):
-  """
-  Sets the Event Detect Status register for a given pin to 1, which has the effect of clearing the flag. Use this after seeing an Event Detect Status on the pin.
+    """
+    Sets the Event Detect Status register for a given pin to 1, which has the effect of clearing the flag. Use this after seeing an Event Detect Status on the pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_set_eds(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_set_eds(pin)
 
 def gpio_ren(pin):
-  """
-  Enable Rising Edge Detect Enable for the specified pin.
-  When a rising edge is detected, sets the appropriate pin in Event Detect Status.
-  The GPRENn registers use
-  synchronous edge detection. This means the input signal is sampled using the
-  system clock and then it is looking for a ?011? pattern on the sampled signal. This
-  has the effect of suppressing glitches.
+    """
+    Enable Rising Edge Detect Enable for the specified pin.
+    When a rising edge is detected, sets the appropriate pin in Event Detect Status.
+    The GPRENn registers use
+    synchronous edge detection. This means the input signal is sampled using the
+    system clock and then it is looking for a ?011? pattern on the sampled signal. This
+    has the effect of suppressing glitches.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_ren(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_ren(pin)
 
 def gpio_clr_ren(pin):
-  """
-  Disable Rising Edge Detect Enable for the specified pin.
+    """
+    Disable Rising Edge Detect Enable for the specified pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_ren(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_ren(pin)
 
 def gpio_fen(pin):
-  """
-  Enable Falling Edge Detect Enable for the specified pin.
-  When a falling edge is detected, sets the appropriate pin in Event Detect Status.
-  The GPRENn registers use
-  synchronous edge detection. This means the input signal is sampled using the
-  system clock and then it is looking for a ?100? pattern on the sampled signal. This
-  has the effect of suppressing glitches.
+    """
+    Enable Falling Edge Detect Enable for the specified pin.
+    When a falling edge is detected, sets the appropriate pin in Event Detect Status.
+    The GPRENn registers use
+    synchronous edge detection. This means the input signal is sampled using the
+    system clock and then it is looking for a ?100? pattern on the sampled signal. This
+    has the effect of suppressing glitches.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_fen(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_fen(pin)
 
 def gpio_clr_fen(pin):
-  """
-  Disable Falling Edge Detect Enable for the specified pin.
+    """
+    Disable Falling Edge Detect Enable for the specified pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_fen(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_fen(pin)
 
 def gpio_hen(pin):
-  """
-  Enable High Detect Enable for the specified pin.
-  When a HIGH level is detected on the pin, sets the appropriate pin in Event Detect Status.
+    """
+    Enable High Detect Enable for the specified pin.
+    When a HIGH level is detected on the pin, sets the appropriate pin in Event Detect Status.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_hen(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_hen(pin)
 
 def gpio_clr_hen(pin):
-  """
-  Disable High Detect Enable for the specified pin.
+    """
+    Disable High Detect Enable for the specified pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_hen(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_hen(pin)
 
 def gpio_len(pin):
-  """
-  Enable Low Detect Enable for the specified pin.
-  When a LOW level is detected on the pin, sets the appropriate pin in Event Detect Status.
+    """
+    Enable Low Detect Enable for the specified pin.
+    When a LOW level is detected on the pin, sets the appropriate pin in Event Detect Status.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_len(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_len(pin)
 
 def gpio_clr_len(pin):
-  """
-  Disable Low Detect Enable for the specified pin.
+    """
+    Disable Low Detect Enable for the specified pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_len(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_len(pin)
 
 def gpio_aren(pin):
-  """
-  Enable Asynchronous Rising Edge Detect Enable for the specified pin.
-  When a rising edge is detected, sets the appropriate pin in Event Detect Status.
-  Asynchronous means the incoming signal is not sampled by the system clock. As such
-  rising edges of very short duration can be detected.
+    """
+    Enable Asynchronous Rising Edge Detect Enable for the specified pin.
+    When a rising edge is detected, sets the appropriate pin in Event Detect Status.
+    Asynchronous means the incoming signal is not sampled by the system clock. As such
+    rising edges of very short duration can be detected.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_aren(pin)
-
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_aren(pin)
 
 def gpio_clr_aren(pin):
-  """
-  Disable Asynchronous Rising Edge Detect Enable for the specified pin.
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_aren(pin)
-
+    """
+    Disable Asynchronous Rising Edge Detect Enable for the specified pin.
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_aren(pin)
 
 def gpio_afen(pin):
-  """
-  Enable Asynchronous Falling Edge Detect Enable for the specified pin.
-  When a falling edge is detected, sets the appropriate pin in Event Detect Status.
-  Asynchronous means the incoming signal is not sampled by the system clock. As such
-  falling edges of very short duration can be detected.
+    """
+    Enable Asynchronous Falling Edge Detect Enable for the specified pin.
+    When a falling edge is detected, sets the appropriate pin in Event Detect Status.
+    Asynchronous means the incoming signal is not sampled by the system clock. As such
+    falling edges of very short duration can be detected.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_afen(pin)
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_afen(pin)
 
 def gpio_clr_afen(pin):
-  """
-  Disable Asynchronous Falling Edge Detect Enable for the specified pin.
+    """
+    Disable Asynchronous Falling Edge Detect Enable for the specified pin.
 
-  :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-  """
-  c_bcm2835_gpio_clr_afen(pin)
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    """
+    c_bcm2835_gpio_clr_afen(pin)
 
 def gpio_pud(pud):
-  """
-  Sets the Pull-up/down register for the given pin. This is
-  used with bcm2835_gpio_pudclk() to set the  Pull-up/down resistor for the given pin.
-  However, it is usually more convenient to use bcm2835_gpio_set_pud().
+    """
+    Sets the Pull-up/down register for the given pin. This is
+    used with bcm2835_gpio_pudclk() to set the  Pull-up/down resistor for the given pin.
+    However, it is usually more convenient to use bcm2835_gpio_set_pud().
 
-  :param pud: The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
-  """
-  c_bcm2835_gpio_pud(pud)
+    :param pud: The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
+    """
+    c_bcm2835_gpio_pud(pud)
 
 
-"""
+def gpio_pudclk(uint8_t pin, uint8_t on):
+    """
     Clocks the Pull-up/down value set earlier by bcm2835_gpio_pud() into the pin.
-    \param[in] pin GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-    \param[in] on HIGH to clock the value from bcm2835_gpio_pud() into the pin.
-    LOW to remove the clock.
-    \sa bcm2835_gpio_set_pud()
-    extern void bcm2835_gpio_pudclk(uint8_t pin, uint8_t on);
 
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :param on: HIGH to clock the value from bcm2835_gpio_pud() into the pin. LOW to remove the clock.
+    :see also: bcm2835_gpio_set_pud()
+    """
+    c_bcm2835_gpio_pudclk(pin, on)
 
+def gpio_write(uint8_t pin, uint8_t on):
+    """
     Sets the output state of the specified pin
-    \param[in] pin GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-    \param[in] on HIGH sets the output to HIGH and LOW to LOW.
-    extern void bcm2835_gpio_write(uint8_t pin, uint8_t on);
 
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :param on: HIGH sets the output to HIGH and LOW to LOW.
+    :return:
+    """
+    c_bcm2835_gpio_write(pin, on)
+
+
+def gpio_write_multi(uint32_t mask, uint8_t on):
+    """
     Sets any of the first 32 GPIO output pins specified in the mask to the state given by on
-    \param[in] mask Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
-    \param[in] on HIGH sets the output to HIGH and LOW to LOW.
-    extern void bcm2835_gpio_write_multi(uint32_t mask, uint8_t on);
 
+    :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
+    :param on: HIGH sets the output to HIGH and LOW to LOW.
+    :return:
+    """
+    c_bcm2835_gpio_write_multi(mask, on)
+
+
+def gpio_write_mask(uint32_t value, uint32_t mask):
+    """
     Sets the first 32 GPIO output pins specified in the mask to the value given by value
-    \param[in] value values required for each bit masked in by mask, eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
-    \param[in] mask Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
-    extern void bcm2835_gpio_write_mask(uint32_t value, uint32_t mask);
 
-    Sets the Pull-up/down mode for the specified pin. This is more convenient than
-    clocking the mode in with bcm2835_gpio_pud() and bcm2835_gpio_pudclk().
-    \param[in] pin GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
-    \param[in] pud The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
-    extern void bcm2835_gpio_set_pud(uint8_t pin, uint8_t pud);
+    :param value: Values required for each bit masked in by mask, eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
+    :param mask: Mask of pins to affect. Use eg: (1 << RPI_GPIO_P1_03) | (1 << RPI_GPIO_P1_05)
+    :return:
+    """
+    c_bcm2835_gpio_write_mask(value, mask)
 
 
-"""
+def gpio_set_pud(uint8_t pin, uint8_t pud):
+    """
+    Sets the Pull-up/down mode for the specified pin. This is more convenient than clocking the mode in with bcm2835_gpio_pud() and bcm2835_gpio_pudclk().
+
+    :param pin: GPIO number, or one of RPI_GPIO_P1_* from \ref RPiGPIOPin.
+    :param pud: The desired Pull-up/down mode. One of GPIO_PUD_* from bcm2835PUDControl
+    :return:
+    """
+    c_bcm2835_gpio_set_pud(pin, pud)

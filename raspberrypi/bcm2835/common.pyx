@@ -139,8 +139,8 @@ def peri_write_nb(paddr, value):
 
 def peri_set_bits(paddr, value, mask):
   """
-  Alters a number of bits in a 32 peripheral regsiter.
-  It reads the current valu and then alters the bits deines as 1 in mask,
+  Alters a number of bits in a 32 peripheral register.
+  It reads the current value and then alters the bits defines as 1 in mask,
   according to the bit value in value.
   All other bits that are 0 in the mask are unaffected.
   Use this to alter a subset of the bits in a register.
